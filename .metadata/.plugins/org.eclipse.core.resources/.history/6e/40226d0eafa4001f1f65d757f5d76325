@@ -1,0 +1,5 @@
+package com.ty.ProductService.Controller;
+
+public class ProductController {
+
+}

@@ -1,0 +1,5 @@
+package com.ty.UserService.Repository;
+
+public class UserRepository {
+
+}

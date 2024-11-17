@@ -1,0 +1,5 @@
+package com.ty.ProductService.Repository;
+
+public class ProductRepository {
+
+}

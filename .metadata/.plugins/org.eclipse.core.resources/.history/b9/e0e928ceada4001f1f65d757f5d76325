@@ -1,0 +1,5 @@
+package com.ty.UserService.servuce;
+
+public class UserService {
+
+}

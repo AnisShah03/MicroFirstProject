@@ -1,0 +1,32 @@
+package com.ty.OrderService.service;
+
+import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
+
+import com.ty.OrderService.model.Product;
+import com.ty.OrderService.model.User;
+
+@Service
+public class OrderService {
+
+	private final WebClient.Builder webClientBuilder;
+
+	public OrderService(WebClient.Builder webClientBuilder) {
+		this.webClientBuilder = webClientBuilder;
+	}
+
+	// Method to verify user
+	public User getUser(Long userId) {
+		return webClientBuilder.baseUrl("http://user-service") // User Service URL
+				.build().get().uri("/users/" + userId).retrieve().bodyToMono(User.class).block(); // block() to convert
+																									// the response to a
+																									// synchronous
+																									// result
+	}
+
+	// Method to check product availability
+	public Product getProduct(Long productId) {
+		return webClientBuilder.baseUrl("http://product-service") // Product Service URL
+				.build().get().uri("/products/" + productId).retrieve().bodyToMono(Product.class).block();
+	}
+}

@@ -1,0 +1,5 @@
+package com.ty.ProductService.model;
+
+public class Product {
+
+}
